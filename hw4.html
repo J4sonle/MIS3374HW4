@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 4</title>
+    <link rel="stylesheet" href="hw4.css">
+    <script defer src="hw4.js"></script>
+</head>
+<body>
+    <!-- Fixed Header with Logo and Date -->
+    <header>
+        <table width="100%">
+            <tr>
+                <td valign="top" align="left" width="20%">
+                    <img src="pokiball.PNG" width="100%" id="logo" alt="Pokiball logo">
+                </td>
+                <td><h2>Poki Hospital</h2></td>
+                <td valign="bottom" align="right" width="20%">
+                    <p>Today's Date: <span id="today"></span></p>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+    <!-- Dynamic Welcome Message -->
+    <center>
+        <span id="welcome1"></span>
+        <span id="welcome2"></span>
+    </center>
+
+    <!-- Sign-Up Form -->
+    <form action="thankyou.html" id="signup-form">
+        <table>
+            <tr><th colspan="4">Patient/Poki Sign-Up Form</th></tr>
+
+            <!-- First Name + Remember Me -->
+            <tr>
+                <td><label for="fname">First Name:</label></td>
+                <td>
+                    <input type="text" name="fname" id="fname" maxlength="30" placeholder="First name" onblur="validateFname()" />
+                    <span class="error" id="fname-error"></span><br>
+                    <input type="checkbox" id="remember-me" name="remember-me" checked /> Remember Me
+                </td>
+            </tr>
+
+            <!-- Middle Initial -->
+            <tr>
+                <td><label for="mini">Middle Initial:</label></td>
+                <td>
+                    <input type="text" name="mini" id="mini" maxlength="1" placeholder="Middle Initial" onblur="validateMini()" />
+                    <span class="error" id="mini-error"></span>
+                </td>
+            </tr>
+
+            <!-- Last Name -->
+            <tr>
+                <td><label for="lname">Last Name:</label></td>
+                <td>
+                    <input type="text" name="lname" id="lname" maxlength="30" placeholder="Last name" onblur="validateLname()" />
+                    <span class="error" id="lname-error"></span>
+                </td>
+            </tr>
+
+            <!-- Gender Selection -->
+            <tr>
+                <td><label for="gender">Gender:</label></td>
+                <td>
+                    <input type="radio" id="g1" name="gender" value="Male" required> Male
+                    <input type="radio" id="g2" name="gender" value="Female"> Female
+                    <input type="radio" id="g3" name="gender" value="Other"> Other
+                    <span class="error" id="gender-error"></span>
+                </td>
+            </tr>
+
+            <!-- Date of Birth -->
+            <tr>
+                <td><label for="dob">Date of Birth:</label></td>
+                <td>
+                    <input type="date" id="dob" name="dob" required onblur="validateDob()" />
+                    <span class="error" id="dob-error"></span>
+                </td>
+            </tr>
+
+            <!-- Address Line 1 -->
+            <tr>
+                <td><label for="address1">Address Line 1:</label></td>
+                <td>
+                    <input type="text" name="address1" id="address1" maxlength="30" placeholder="Enter Address 1" onblur="validateAddress1()" />
+                </td>
+            </tr>
+
+            <!-- Address Line 2 -->
+            <tr>
+                <td><label for="address2">Address Line 2:</label></td>
+                <td>
+                    <input type="text" name="address2" id="address2" maxlength="30" placeholder="Enter Address 2">
+                </td>
+            </tr>
+
+            <!-- State Dropdown -->
+            <tr>
+                <td><label for="state">State:</label></td>
+                <td>
+                    <select name="state" id="state" required>
+                        <option selected disabled>Please Select One</option>
+                        <option value="TX">Texas</option>
+                        <option value="CA">California</option>
+                        <!-- Add more states as needed -->
+                    </select>
+                    <span class="error" id="state-error"></span>
+                </td>
+            </tr>
+
+            <!-- City Input -->
+            <tr>
+                <td><label for="city">City:</label></td>
+                <td>
+                    <input type="text" name="city" id="city" maxlength="50" placeholder="Enter City" onblur="validateCity()" />
+                    <span class="error" id="city-error"></span>
+                </td>
+            </tr>
+
+            <!-- SSN Input -->
+            <tr>
+                <td><label for="SSN">Social Security Number:</label></td>
+                <td>
+                    <input type="password" name="SSN" id="SSN" maxlength="9" placeholder="SSN" onblur="validateSsn()" />
+                    <span class="error" id="SSN-error"></span>
+                </td>
+            </tr>
+
+            <!-- Status Checkboxes -->
+            <tr>
+                <td><label>Status Conditions:</label></td>
+                <td>
+                    <input type="checkbox" name="pre-con" value="paralysis"> Paralysis
+                    <input type="checkbox" name="pre-con" value="burned"> Burned
+                    <input type="checkbox" name="pre-con" value="frozen"> Frozen
+                    <input type="checkbox" name="pre-con" value="poisoned"> Poisoned
+                    <input type="checkbox" name="pre-con" value="confused"> Confused
+                    <input type="checkbox" name="pre-con" value="n/a"> N/A
+                </td>
+            </tr>
+
+            <!-- Range Slider -->
+            <tr>
+                <td><label for="range">Health lost in battle?</label></td>
+                <td>
+                    <input type="range" name="range" id="range" min="1" max="50" value="0" />
+                    <span id="range-slider"></span>
+                </td>
+            </tr>
+
+            <!-- Phone Number -->
+            <tr>
+                <td><label for="Pnum">Phone Number:</label></td>
+                <td>
+                    <input type="text" name="Pnum" id="Pnum" maxlength="12" placeholder="Phone Number" onblur="validatePhone()" />
+                    <span class="error" id="Pnum-error"></span>
+                </td>
+            </tr>
+
+            <!-- Email -->
+            <tr>
+                <td><label for="Email">Email:</label></td>
+                <td>
+                    <input type="email" name="Email" id="Email" maxlength="50" placeholder="Enter Email" onblur="validateEmail()" />
+                    <span class="error" id="email-error"></span>
+                </td>
+            </tr>
+
+            <!-- User ID -->
+            <tr>
+                <td><label for="uid">User ID:</label></td>
+                <td>
+                    <input type="text" name="uid" id="uid" maxlength="20" placeholder="Your user ID" onblur="validateUid()" />
+                    <span class="error" id="uid-error"></span>
+                </td>
+            </tr>
+
+            <!-- Password -->
+            <tr>
+                <td><label for="pword">Password:</label></td>
+                <td>
+                    <input type="password" name="pword" id="pword" minlength="10" placeholder="Create password"
+                           onblur="validatePword()" oninput="validatePword()" onfocus="validatePword()" />
+                    <span class="error" id="pword-error"></span>
+                </td>
+            </tr>
+
+            <!-- Confirm Password -->
+            <tr>
+                <td><label for="con_pword">Confirm Password:</label></td>
+                <td>
+                    <input type="password" name="con_pword" id="con_pword" placeholder="Confirm password" onblur="confirmpword()" />
+                    <span class="error" id="pword2-error"></span>
+                </td>
+            </tr>
+
+            <!-- Form Buttons -->
+            <tr>
+                <td colspan="4">
+                    <center>
+                        <input type="submit" name="submit" id="submit" value="Submit" disabled>
+                        <input type="reset" name="reset" value="Reset">
+                        <input type="button" name="review" id="review" value="Review" onclick="reviewInput()">
+                        <input type="button" name="validate" id="validate" value="Validate" onclick="validateEverything()">
+                    </center>
+                </td>
+            </tr>
+
+            <!-- Embedded External iFrame Resource -->
+            <tr>
+                <td colspan="4">
+                    <h3>Helpful Resource:</h3>
+                    <div class="iframe-container">
+                        <iframe class="frame" src="https://www.w3schools.com/html/html_iframe.asp" frameborder="0"></iframe>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Form Review Output -->
+    <div id="showInput"></div>
+
+    <!-- Alert Box -->
+    <div id="alert-box">
+        <div id="alert-content">
+            <h4>Please fill out all required fields.</h4>
+            <button id="close-alert">OK</button>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <footer>
+        <p>&#169; Poki Doc Jason L. <a href="https://linkedin.com/hirejasonle">Contact me!</a></p>
+    </footer>
+</body>
+</html>
