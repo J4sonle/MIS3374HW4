@@ -1,30 +1,9 @@
-/* Sticky Header */
-header {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: rgb(255, 165, 0);
-    padding: 10px;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-}
-
-/* Footer Styling */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(255, 165, 0);
-    text-align: center;
-    padding: 10px;
-    z-index: 1000;
-}
+/* hw4.css - Styling for Poki Hospital Form */
 
 body {
     margin: 0;
-    padding-top: 100px;
-    padding-bottom: 70px;
-    background-color: darkgoldenrod;
+    padding-top: 120px;
+    background-color: #FFA500;
     font-family: 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
@@ -32,34 +11,191 @@ body {
     min-height: 100vh;
 }
 
-/* Welcome Message Styling */
-#welcome1, #welcome2 {
-    font-size: 18px;
+/* Sticky Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: orange;
+    padding: 10px 20px;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header table {
+    width: 100%;
+    height: 80px;
+}
+
+header h2 {
+    text-align: center;
+    font-size: 28px;
+    margin: 0;
+    line-height: 60px;
     font-weight: bold;
-    color: white;
-    margin: 10px;
 }
 
-/* iFrame Styling */
-.iframe-container {
-    width: 100%;
+#logo {
+    max-height: 60px;
+}
+
+/* Table Title */
+th {
+    background-color: #fff8dc;
+    color: #000;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+form table {
+    background-color: #ffd580;
+    border-collapse: collapse;
+    width: 90%;
     max-width: 800px;
-    margin: 20px auto;
-    border: 2px solid #000;
+    margin: 20px 0;
     border-radius: 8px;
-    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
-.iframe-container iframe {
-    width: 100%;
-    height: 300px;
-    border: none;
+.td-label {
+    width: 30%;
+    text-align: right;
+    padding-right: 10px;
 }
 
-/* Error Styling */
+td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#range-slider {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
 .error {
     color: red;
     font-size: 13px;
     display: block;
     margin-top: 5px;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    margin: 10px 5px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: darkorange;
+}
+
+#showInput {
+    margin-top: 20px;
+}
+
+.output {
+    border: 2px solid #333;
+    background-color: #fff;
+    width: 90%;
+    max-width: 700px;
+    margin: 10px auto;
+    border-radius: 6px;
+    text-align: left;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.output td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+#alert-box {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    background-color: white;
+    border: 2px solid #f00;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    z-index: 9999;
+    text-align: center;
+}
+
+#alert-content h4 {
+    margin: 0 0 10px 0;
+    color: red;
+}
+
+#close-alert {
+    background-color: red;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* iFrame Styling */
+.iframe-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.frame {
+    width: 95%;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Sticky Footer Styling */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #d2691e;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Welcome Text Styling */
+#welcome1, #welcome2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
 }

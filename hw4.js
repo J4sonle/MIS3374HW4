@@ -69,13 +69,21 @@ function validateFname() {
 function validateMini() {
     let mini = document.getElementById("mini").value.trim().toUpperCase();
     document.getElementById("mini").value = mini;
+
+    if (mini === "") {
+        document.getElementById("mini-error").innerHTML = "";
+        return true; // Allow blank input
+    }
+
     if (!/^[A-Z]$/.test(mini)) {
         document.getElementById("mini-error").innerHTML = "Middle initial must be a single uppercase letter.";
         return false;
     }
+
     document.getElementById("mini-error").innerHTML = "";
     return true;
 }
+
 
 // Last Name Validation
 function validateLname() {
