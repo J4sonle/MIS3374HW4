@@ -1,9 +1,9 @@
 /*
 Name: Jason Le
 Date created: Feb 9th, 2025
-Date last edited: Apr 13th, 2025
-Version: 3.0
-Description: Homework 3 JavaScript
+Date last edited: May 3rd, 2025
+Version: 4.0
+Description: Homework 4 JavaScript
 */
 
 // Display today's date
